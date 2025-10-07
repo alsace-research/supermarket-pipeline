@@ -1,0 +1,41 @@
++--------------------+         +---------------------+
+|  Cloud Scheduler   |  ---->  | Cloud Function #1   |
+|  (Scheduler)       |         | (Extract/Transform) |
++--------------------+         +---------------------+
+                                     | 
+                                     v
++--------------------+         +---------------------+
+|  Kaggle API        |  <----  | Process Data (Pandas)|
+|  (Download Data)   |         | Load to Cloud SQL   |
++--------------------+         +---------------------+
+                                     |
+                                     v
++--------------------+         +---------------------+
+|  GCS               |  <----  | Cloud SQL (PostgreSQL)|
+|  (Raw Data/Logs)   |         | (Dim & Fact Tables) |
++--------------------+         +---------------------+
+                                     |
+                                     v
++--------------------+         +---------------------+
+|  Pub/Sub (Notifications)|  <----  | Cloud Function #2   |
+|                    |         | (Report Generation) |
++--------------------+         +---------------------+
+                                     |
+                                     v
++--------------------+         +---------------------+
+|  GCS               |  <----  | Generated Report    |
+|  (Report Output)   |         | (CSV/PDF)           |
++--------------------+         +---------------------+
+                                     |
+                                     v
++--------------------+
+|  Looker Studio     |
+|  (Optional Dash)   |
++--------------------+
+
+
+
+
+https://lucid.app/lucidchart/c474c47d-04cc-463f-838a-53ca5ac629a9/edit?viewport_loc=-122%2C-133%2C2425%2C1395%2C0_0&invitationId=inv_890b3be1-45bc-4a8a-a236-8132b36dc313
+
+

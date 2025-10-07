@@ -25,6 +25,8 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
    ```bash
    python -m venv venv
+
+   pip install -r requirements.txt
    ```
 
    ```bash
