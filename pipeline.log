@@ -1,0 +1,12 @@
+2025-10-07 15:46:46,752 - INFO - Starting data pipeline process.
+2025-10-07 15:46:46,753 - INFO - Initializing Kaggle API.
+2025-10-07 15:46:46,753 - INFO - Downloading dataset from Kaggle.
+2025-10-07 15:46:47,187 - INFO - Dataset downloaded and unzipped.
+2025-10-07 15:46:47,194 - INFO - Data loaded into DataFrame.
+2025-10-07 15:46:47,201 - INFO - Creating dimension tables.
+2025-10-07 15:46:47,209 - INFO - Data transformation complete.
+2025-10-07 15:46:47,209 - INFO - Connecting to SQLite database.
+2025-10-07 15:46:47,214 - INFO - Database tables created.
+2025-10-07 15:46:47,216 - INFO - Database indexes created.
+2025-10-07 15:46:47,227 - INFO - Data loaded into SQLite database.
+2025-10-07 15:46:47,227 - INFO - Pipeline process completed successfully.
