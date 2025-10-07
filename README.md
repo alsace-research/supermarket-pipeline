@@ -25,10 +25,15 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
    ```bash
    python -m venv venv
+   ```
+
+   ```bash
    # macOS/Linux:
    source venv/bin/activate
+
    # Windows:
    venv\Scripts\activate
+   ```
 
 
 ## Run the Pipeline 
@@ -38,8 +43,30 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
    ```bash
    python pipeline.py
+   ```
 
-sqlite3 supermarket.db < product_line_sales_ranking_per_branch.sql
+3. Check contents of SQLlite db
+
+   ```bash
+   # Check the fact table
+   sqlite3 supermarket.db "SELECT * FROM fact_sales LIMIT 5;"
+   ```
+   
+
+4. Check the dim_location table
+   ```bash
+   sqlite3 supermarket.db "SELECT * FROM dim_location LIMIT 5;"
+   ```
+
+5. Check the dim_product table
+   ```bash
+   sqlite3 supermarket.db "SELECT * FROM dim_product LIMIT 5;"
+   ```
 
 
-## Check the Outputs
+6. Run the Window functions
+   ```bash
+   sqlite3 supermarket.db < product_line_sales_ranking_per_branch.sql
+
+   sqlite3 supermarket.db < product_line_sales_percentage_per_branch.sql
+  
