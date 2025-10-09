@@ -20,8 +20,8 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
 ## Setup
 
-1. Run the ETL pipeline:
-
+1. Clone or download this repo.
+2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
 
@@ -39,14 +39,13 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
 ## Run the Pipeline 
 
-1. Clone or download this repo.
-2. Create and activate a virtual environment:
+1. Run the ETL pipeline:
 
    ```bash
    python pipeline.py
    ```
 
-3. Check contents of SQLlite db
+2. Check contents of SQLlite db
 
    ```bash
    # Check the fact table
@@ -54,18 +53,18 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
    ```
    
 
-4. Check the dim_location table
+3. Check the dim_location table
    ```bash
    sqlite3 supermarket.db "SELECT * FROM dim_location LIMIT 5;"
    ```
 
-5. Check the dim_product table
+4. Check the dim_product table
    ```bash
    sqlite3 supermarket.db "SELECT * FROM dim_product LIMIT 5;"
    ```
 
 
-6. Run the Window functions
+5. Run the Window functions
    ```bash
    sqlite3 supermarket.db < product_line_sales_ranking_per_branch.sql
 
