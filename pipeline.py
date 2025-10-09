@@ -27,11 +27,23 @@ try:
 
     # Basic cleaning: Convert 'date' to datetime
     df['date'] = pd.to_datetime(df['date'])
+<<<<<<< HEAD
     df['Quantity'] = pd.to_numeric(df['Quantity'], errors='coerce').fillna(1).astype(int)
     df['Unit price'] = pd.to_numeric(df['Unit price'], errors='coerce').fillna(0)
     df['Tax 5%'] = pd.to_numeric(df['Tax 5%'], errors='coerce').fillna(0)
     df['Total'] = pd.to_numeric(df['Total'], errors='coerce').fillna(0)
     df.dropna(subset=['Invoice ID', 'Product line'], inplace=True)  # Basic quality
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48d7cca (Additional DQ steps)
+=======
+    df.dropna(subset=['invoice_id', 'product_line'], inplace=True)  # Basic quality
+    df['quantity'] = pd.to_numeric(df['quantity'], errors='coerce').fillna(1).astype(int)
+    df['unit_price'] = pd.to_numeric(df['unit_price'], errors='coerce').fillna(0)
+    df['tax_5'] = pd.to_numeric(df['tax_5'], errors='coerce').fillna(0)
+    df['total'] = pd.to_numeric(df['total'], errors='coerce').fillna(0)
+>>>>>>> 2898dab (Fix on DQ in pipeline)
 
     # Step 2: Transform - Create dimension tables
     logging.info('Creating dimension tables.')
