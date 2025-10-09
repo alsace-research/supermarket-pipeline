@@ -20,8 +20,7 @@ The schema is lightweight: surrogate keys for dimensions, measures like `total` 
 
 ## Setup
 
-1. Clone or download this repo.
-2. Create and activate a virtual environment:
+1. Run the ETL pipeline:
 
    ```bash
    python -m venv venv
