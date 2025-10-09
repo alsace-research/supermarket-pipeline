@@ -27,6 +27,11 @@ try:
 
     # Basic cleaning: Convert 'date' to datetime
     df['date'] = pd.to_datetime(df['date'])
+    df['Quantity'] = pd.to_numeric(df['Quantity'], errors='coerce').fillna(1).astype(int)
+    df['Unit price'] = pd.to_numeric(df['Unit price'], errors='coerce').fillna(0)
+    df['Tax 5%'] = pd.to_numeric(df['Tax 5%'], errors='coerce').fillna(0)
+    df['Total'] = pd.to_numeric(df['Total'], errors='coerce').fillna(0)
+    df.dropna(subset=['Invoice ID', 'Product line'], inplace=True)  # Basic quality
 
     # Step 2: Transform - Create dimension tables
     logging.info('Creating dimension tables.')
